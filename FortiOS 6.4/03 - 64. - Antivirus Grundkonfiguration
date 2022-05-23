@@ -1,0 +1,35 @@
+#bei VDOM zuerst VDOM auswählen:
+config vdom
+edit root			#oder gewünschte VDOM auswählen
+
+#Normal
+
+config antivirus profile
+    edit "av_bube_flow_v1.2"
+        set comment "Scan files and block viruses."
+        config http
+            set options scan
+            set outbreak-prevention files
+        end
+        config ftp
+            set options scan
+            set outbreak-prevention files
+        end
+        config imap
+            set options scan
+            set outbreak-prevention files
+        end
+        config pop3
+            set options scan
+            set outbreak-prevention files
+        end
+        config smtp
+            set options scan
+            set outbreak-prevention files
+        end
+        config outbreak-prevention
+            set ftgd-service enable
+            set external-blocklist disable
+        end
+    next 
+end
