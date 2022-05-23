@@ -1,0 +1,623 @@
+config firewall service category
+    edit "BUBE_MGMT"
+    next
+    edit "BUBE_BIG_PLAYER"
+    next
+    edit "BUBE_VIDEO"
+    next
+    edit "BUBE_SPEEDTEST"
+    next
+    edit "BUBE_BACKUP"
+    next
+    edit "BUBE_MEDICAL"
+    next
+    edit "BUBE_VOIP"
+    next
+    edit "BUBE_MULTIMEDIA"
+    next
+    edit "BUBE_SIX_PAYMENT_SERVICES"
+    next
+    edit "BUBE_REMOTE"
+    next
+    edit "BUBE_KUNDE"
+        set comment "Kundenspeziefische Ports und Services"
+    next
+    edit "BUBE_ANTIVIRUS"
+        set comment "Spezifische Ports und Services fuer Antivirus Loesungen"
+    next
+    edit "BUBE_GAMES"
+        set comment "Spezifische Ports und Services fuer Games"
+    next
+end
+
+#----------------------------------------------------------------------------------------------------------------------------------
+##############################################################
+######## Benutzerdefinierte Protokolle und Services ##########
+##############################################################
+#----------------------------------------------------------------------------------------------------------------------------------
+
+config firewall service custom
+    edit "SMTP_TCP_587"
+        set category "Email"
+        set color 6
+        set tcp-portrange 587
+    next
+    edit "HTTPS_TCP_9443"
+        set category "BUBE_MGMT"
+        set color 6
+        set tcp-portrange 9443
+    next
+    edit "HTTPS_TCP_10443"
+        set category "BUBE_MGMT"
+        set color 6
+        set tcp-portrange 10443
+    next
+    edit "HTTPS_TCP_50443"
+        set category "BUBE_MGMT"
+        set color 6
+        set tcp-portrange 50443
+    next
+        edit "APPLE_APN_TCP_5223"
+        set category "BUBE_BIG_PLAYER"
+        set color 6
+        set iprange 17.0.0.0-17.255.255.255
+        set tcp-portrange 5223
+    next
+    edit "HTTPS_TCP_4343"
+        set category "BUBE_MGMT"
+        set color 6
+        set tcp-portrange 4343
+    next
+    edit "HTTPS_UDP"
+        set category "Web Access"
+        set color 6
+        set udp-portrange 443
+    next
+    edit "GOOGLE_Playstore_TCP_UDP_5228"
+        set category "BUBE_BIG_PLAYER"
+        set color 6
+        set tcp-portrange 5228
+        set udp-portrange 5228
+    next
+    edit "GOOGLE_TALK_TCP_UDP_5222"
+        set category "BUBE_BIG_PLAYER"
+        set color 6
+        set tcp-portrange 5222
+        set udp-portrange 5222
+    next
+    edit "FORTINET-FORTIGUARD_UDP_8888"
+        set category "BUBE_MGMT"
+        set color 6
+        set udp-portrange 8888
+    next
+    edit "TEAMVIEWER_TCP_UDP_5938"
+        set category "BUBE_REMOTE"
+        set color 6
+        set tcp-portrange 5938
+        set udp-portrange 5938
+    next
+    edit "FORTINET-FORTICLIENT_TCP_8013"
+        set category "BUBE_MGMT"
+        set color 6
+        set tcp-portrange 8013
+    next
+    edit "SYNOLOGY_VIDEOSTATION_TCP_9901"
+        set category "BUBE_VIDEO"
+        set color 6
+        set tcp-portrange 9901
+    next
+    edit "HTTP_TCP_8080"
+        set category "Web Access"
+        set color 6
+        set tcp-portrange 8080
+    next
+    edit "HTTP_UDP_8080"
+        set category "Web Access"
+        set color 6
+        set udp-portrange 8080
+    next
+    edit "HTTP_UDP"
+        set category "Web Access"
+        set color 6
+        set udp-portrange 80
+    next
+    edit "CNLAB_TCP_8000-8050"
+        set category "BUBE_SPEEDTEST"
+        set color 6
+        set tcp-portrange 8000-8050
+    next
+    edit "CNLAB_TCP_9000-9030"
+        set category "BUBE_SPEEDTEST"
+        set color 6
+        set tcp-portrange 9008-9025
+    next
+    edit "SPEEDTEST_UDP137"
+        set category "BUBE_SPEEDTEST"
+        set color 6
+        set udp-portrange 137
+    next
+    edit "GOOGLEFIBRE_TCP_3004-3023"
+        set category "BUBE_SPEEDTEST"
+        set color 6
+        set tcp-portrange 3004-3023
+    next
+    edit "ACRONIS_TCP_7770-7800"
+        set category "BUBE_BACKUP"
+        set color 6
+        set tcp-portrange 7770-7800 
+    next
+    edit "ACRONIS_TCP_44445"
+        set category "BUBE_BACKUP"
+        set color 6
+        set tcp-portrange 44445
+    next
+    edit "ACRONIS_TCP_8443"
+        set category "BUBE_BACKUP"
+        set color 6
+        set tcp-portrange 8443
+    next
+    edit "DelemedUpdatemanager_TCP_45635"
+        set category "BUBE_MEDICAL"
+        set color 6
+        set tcp-portrange 45635
+    next
+    edit "DATATRUST_TCP_90"
+        set category "BUBE_BACKUP"
+        set color 6
+        set tcp-portrange 90
+    next
+    edit "DATATRUST_TCP_79"
+        set category "BUBE_BACKUP"
+        set color 6
+        set tcp-portrange 79
+    next
+    edit "WhatsApp_VoIP.Call_UDP_3478"
+        set category "BUBE_VOIP"
+        set color 6
+        set udp-portrange 3478
+    next
+    edit "VMWareView_TCP/UDP_4172"
+        set category "BUBE_REMOTE"
+        set color 6
+        set tcp-portrange 4172
+        set udp-portrange 4172
+    next
+    edit "VMWareView_USB_TCP_32111"
+        set category "BUBE_REMOTE"
+        set color 6
+        set tcp-portrange 32111
+    next
+    edit "ZOOM_TCP_8801-8802"
+        set category "BUBE_VOIP"
+        set color 6
+        set tcp-portrange 8801-8802
+    next
+    edit "ZOOM_UDP_8801-8810"
+        set category "BUBE_VOIP"
+        set color 6
+        set udp-portrange 8801-8810
+    next
+    edit "ZOOM_UDP_3478-3479"
+        set category "BUBE_VOIP"
+        set color 6
+        set udp-portrange 3478-3479
+    next
+    edit "ZOOM_TCP_5090-5091"
+        set category "BUBE_VOIP"
+        set color 6
+        set tcp-portrange 5090-5091
+    next
+    edit "ZOOM_UDP_5090"
+        set category "BUBE_VOIP"
+        set color 6
+        set udp-portrange 5090
+    next
+    edit "ZOOM_UDP_20000-64000"
+        set category "BUBE_VOIP"
+        set color 6
+        set udp-portrange 20000-64000
+    next
+    edit "AZURE_TCP_8883"
+        set category "BUBE_BIG_PLAYER"
+        set color 6
+        set tcp-portrange 8883-8883
+    next
+    edit "Heos_UDP_5123"
+        set category "BUBE_MULTIMEDIA"
+        set color 6
+        set udp-portrange 5123
+    next
+    edit "Heos_TCP_6125"
+        set category "BUBE_MULTIMEDIA"
+        set color 6
+        set tcp-portrange 6125
+    next
+    edit "Heos_TCP_6126"
+        set category "BUBE_MULTIMEDIA"
+        set color 6
+        set tcp-portrange 6126
+    next
+    edit "Heos/Spotify_TCP_4070"
+        set category "BUBE_MULTIMEDIA"
+        set color 6
+        set tcp-portrange 4070
+    next
+    edit "SIX_Softwaredownload"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set comment "SIX Payment Services - Softwaredownload"
+        set color 6
+        set fqdn "serv.ep2.telekurs.com"
+        set tcp-portrange 8953
+        set udp-portrange 8953
+    next
+    edit "SIX_GKLP"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set comment "SIX Payment Serices - GKLP"
+        set color 6
+        set fqdn "gklp.telekurs.com"
+        set tcp-portrange 62000
+    next
+    edit "SIX_Konfiguration"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "siconfig.ep2.telekurs.com"
+        set tcp-portrange 8115
+    next
+    edit "SIX_Initialisierung"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "siinit.ep2.telekurs.com"
+        set tcp-portrange 2252
+    next
+    edit "SIX_Autorisierung"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "fe.ep2.telekurs.com"
+        set tcp-portrange 2251
+    next
+    edit "SIX_Einlieferung"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "misubm.ep2.telekurs.com"
+        set tcp-portrange 2254
+    next
+    edit "SIX_TaxFree_Premier"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "pi.fintrax.com"
+        set tcp-portrange 51030
+        set udp-portrange 51030
+    next
+    edit "SIX_TaxFree_Global"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "abrantix.globalblue.com"
+        set tcp-portrange 51030
+        set udp-portrange 51030
+    next
+    edit "SIX_Valuemaster"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set iprange 153.46.99.1
+        set tcp-portrange 50005
+    next
+    edit "SIX_Aduno"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2p.a-multilink.ch"
+        set tcp-portrange 3000 3100 3200
+        set udp-portrange 3000 3100 3200
+    next
+    edit "SIX_ConCardis"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2.firstdata.de"
+        set tcp-portrange 41563
+        set udp-portrange 41563
+    next
+    edit "SIX_PharmaCard"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set iprange 193.16.220.2
+        set tcp-portrange 5061-5062
+        set udp-portrange 5061-5062
+    next
+    edit "SIX_PostFinance"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2.PostFinance.ch"
+        set tcp-portrange 1637-1641
+        set udp-portrange 1637-1641
+    next
+    edit "SIX_WIR"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2cp.wir.ch"
+        set tcp-portrange 1603 1605
+        set udp-portrange 1603 1605 1607 1607
+    next
+    edit "SIX_Boncard"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2.boncard.net"
+        set tcp-portrange 5045
+        set udp-portrange 5045
+    next
+    edit "SIX_REKA"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2.reka.ch"
+        set tcp-portrange 51006-51008
+        set udp-portrange 51006-51008
+    next
+    edit "SIX_B+S"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "ep2.ep2-bs.ch"
+        set tcp-portrange 5045
+        set udp-portrange 5045
+    next
+    edit "SIX_Innocard"
+        set category "BUBE_SIX_PAYMENT_SERVICES"
+        set color 6
+        set fqdn "acqprim.innocard.ch"
+        set tcp-portrange 6057-6060
+        set udp-portrange 6057-6060
+    next
+    edit "CHECKMK_AGENT_TCP_6556"
+        set color 6
+        set category "BUBE_MGMT"
+        set tcp-portrange 6556
+    next
+    edit "RDP_UDP"
+        set color 6
+        set category "BUBE_REMOTE"
+        set udp-portrange 3389
+    next
+    edit "MicrosoftKeyManagementService_TCP_1688"
+        set color 6
+        set category "BUBE_BIG_PLAYER"
+        set tcp-portrange 1688
+    next
+    edit "TrendMicro_Agent"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 21112
+    next
+    edit "TrendMicro_Agent_HTTP-Server"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 61116
+    next
+    edit "TrendMicro_Agent-Broadcast"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set udp-portrange 61117
+    next
+    edit "TrendMicro_Agent-Downloader"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set udp-portrange 61119
+    next
+    edit "TrendMicro_Android_App"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 5228-5230
+    next
+    edit "TrendMicro_Comm_Agent_Server"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 443
+    next
+    edit "TrendMicro_Comm_APNS"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 5223
+    next
+    edit "TrendMicro_Notification_APNS"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 2195
+    next
+    edit "TrendMicro_Feedback_APNS"
+        set color 6
+        set category "BUBE_ANTIVIRUS"
+        set tcp-portrange 2196
+    next
+    edit "AnyDesk"
+        set color 6
+        set category "BUBE_REMOTE"
+        set tcp-portrange 6568
+        set fqdn *.net.anydesk.com
+    next
+    edit "Splashtop"
+        set color 6
+        set category "BUBE_REMOTE"
+        set tcp-portrange 6783-6785
+        set udp-portrange 6783-6785
+    next
+    edit "AteraBackup"
+        set color 6
+        set category "BUBE_MGMT"
+        set tcp-portrange 5000
+    next
+    edit "SynologyFileStation"
+        set color 6
+        set category "BUBE_MGMT"
+        set tcp-portrange 5000-5001 5005-5006
+    next
+    edit "Origin.com_TCP9960-9969"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 9960-9969
+    next
+    edit "Origin.com_TCP1024-1124"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 1024-1124
+    next
+    edit "Origin.com_TCP3216"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 3216
+    next
+    edit "Origin.com_TCP18000"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 18000
+    next
+    edit "Origin.com_TCP18120"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 18120
+    next
+    edit "Origin.com_TCP18060"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 18060
+    next
+    edit "Origin.com_TCP27900"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 27900
+    next
+    edit "Origin.com_TCP28910"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 28910
+    next
+    edit "Origin.com_TCP29900"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 29900
+    next
+    edit "Origin.com_UDP1024-1124"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 1024-1124
+    next
+    edit "Origin.com_UDP18000"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 18000
+    next
+    edit "Origin.com_UDP29900"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 29900
+    next
+    edit "Blizzard_Battle.net_TCP/UDP1119"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 1119
+        set udp-portrange 1119
+    next
+    edit "BlizzardVoiceChat_UDP3478-3479"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 3478-3479
+    next
+    edit "BlizzardVoiceChat_UDP5060-5062"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 5060-5062
+    next
+    edit "BlizzardVoiceChat_UDP6250"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 6250
+    next
+    edit "BlizzardVoiceChat_UDP12000-64000"
+        set color 6
+        set category "BUBE_GAMES"
+        set udp-portrange 12000-64000
+    next
+    edit "BlizzardDownloader_TCP/UDP1120"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 1120
+        set udp-portrange 1120
+    next
+    edit "BlizzardDownloader_TCP/UDP3724"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 3724
+        set udp-portrange 3724
+    next
+    edit "BlizzardDownloader_TCP/UDP4000"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 4000
+        set udp-portrange 4000
+    next
+    edit "BlizzardDownloader_TCP/UDP6112-6114"
+        set color 6
+        set category "BUBE_GAMES"
+        set tcp-portrange 6112-6114
+        set udp-portrange 6112-6114
+    next
+    edit "DNS-over-TLS"
+        set color 6
+        set category "Network Services"
+        set tcp-portrange 853
+        set comment "rfc7858 / dot"
+    next
+end
+
+#----------------------------------------------------------------------------------------------------------------------------------
+##############################################################
+############ Benutzerdefinierte Protokollgruppen #############
+##############################################################
+#---------------------------------------------------------------------------------------------------------------------------------
+
+config firewall service group
+    edit "G_INTERNET_BUBE_V1.4"
+        set member "DNS" "FTP" "HTTP" "HTTPS" "NTP" "HTTPS_UDP" "HTTP_TCP_8080" "HTTP_UDP_8080" "HTTP_UDP"
+    next
+    edit "G_MAIL_BUBE_V1.0"
+        set member "IMAP" "IMAPS" "POP3" "POP3S" "SMTP" "SMTPS" "SMTP_TCP_587" "DNS"
+    next
+    edit "G_DIAGNOSE_BUBE_V1.4"
+        set member "ALL_ICMP" "HTTPS_TCP_9443" "HTTPS_TCP_10443" "HTTPS_TCP_50443" "HTTPS_TCP_4343" "FORTINET-FORTICLIENT_TCP_8013" "CHECKMK_AGENT_TCP_6556" "SynologyFileStation"
+    next
+    edit "G_BIG_PLAYERS_BUBE_V1.3"
+        set member "APPLE_APN_TCP_5223" "GOOGLE_Playstore_TCP_UDP_5228" "GOOGLE_TALK_TCP_UDP_5222" "FORTINET-FORTIGUARD_UDP_8888" "AZURE_TCP_8883" "MicrosoftKeyManagementService_TCP_1688"
+    next
+    edit "G_VIDEO_BUBE_V1.0"
+        set member "SYNOLOGY_VIDEOSTATION_TCP_9901"
+    next
+    edit "G_SPEEDTEST_BUBE_V1.1"
+        set member "CNLAB_TCP_8000-8050" "CNLAB_TCP_9000-9030" "SPEEDTEST_UDP137" "GOOGLEFIBRE_TCP_3004-3023"
+    next
+    edit "G_BACKUP_BUBE_V1.1"
+        set member "ACRONIS_TCP_7770-7800" "ACRONIS_TCP_44445" "ACRONIS_TCP_8443" "DATATRUST_TCP_79" "DATATRUST_TCP_90" "SSH" "HTTP"
+    next
+    edit "G_MEDICAL_BUBE_V1.0"
+        set member "DelemedUpdatemanager_TCP_45635"
+    next
+    edit "G_VOIP_BUBE_V1.2"
+        set member "SIP" "WhatsApp_VoIP.Call_UDP_3478" "ZOOM_TCP_8801-8802" "ZOOM_UDP_8801-8810" "ZOOM_UDP_3478-3479" "ZOOM_TCP_5090-5091" "ZOOM_UDP_5090" "ZOOM_UDP_20000-64000"
+    next
+    edit "G_REMOTE_BUBE_V1.3"
+        set member "RDP" "RDP_UDP" "AnyDesk" "TEAMVIEWER_TCP_UDP_5938" "VMWareView_TCP/UDP_4172" "VMWareView_USB_TCP_32111"
+    next
+    edit "G_HEOS_BUBE_V1.0"
+        set member "Heos_UDP_5123" "Heos_TCP_6125" "Heos_TCP_6126" "Heos/Spotify_TCP_4070"
+    next
+    edit "G_SIX_EFT_Terminal_V1.0"
+        set member "SIX_Aduno" "SIX_Autorisierung" "SIX_Boncard" "SIX_ConCardis" "SIX_Einlieferung" "SIX_GKLP" "SIX_Initialisierung" "SIX_Konfiguration" "SIX_PharmaCard" "SIX_REKA" "SIX_Softwaredownload" "SIX_TaxFree_Global" "SIX_TaxFree_Premier" "SIX_Valuemaster" "SIX_WIR" "SIX_PostFinance"
+        set comment "Zahlungsterminal"
+    next
+    edit "G_ANTIVIRUS_BUBE_V1.0"
+        set member "TrendMicro_Agent" "TrendMicro_Agent-Broadcast" "TrendMicro_Agent-Downloader" "TrendMicro_Agent_HTTP-Server" "TrendMicro_Android_App" "TrendMicro_Comm_APNS" "TrendMicro_Feedback_APNS" "TrendMicro_Notification_APNS"
+        set comment "Antivirus"
+    next
+    edit "G_ATERA_BUBE_V1.0"
+        set member "HTTP" "HTTPS" "ACRONIS_TCP_8443" "Splashtop" "AteraBackup" "AnyDesk"
+        set comment "Atera PSA/RMM Software"
+    next
+    edit "G_GAMES_BUBE_V1.1"
+        set member "HTTP_UDP" "HTTPS_UDP" "HTTP_TCP_8080" "HTTP_UDP_8080" "Origin.com_TCP9960-9969" "Origin.com_TCP1024-1124" "Origin.com_TCP3216" "Origin.com_TCP18000" "Origin.com_TCP18120" "Origin.com_TCP18060" "Origin.com_TCP27900" "Origin.com_TCP28910" "Origin.com_TCP29900" "Origin.com_UDP1024-1124" "Origin.com_UDP18000" "Origin.com_UDP29900" "Blizzard_Battle.net_TCP/UDP1119" "BlizzardVoiceChat_UDP3478-3479" "BlizzardVoiceChat_UDP5060-5062" "BlizzardVoiceChat_UDP6250" "BlizzardVoiceChat_UDP12000-64000" "BlizzardDownloader_TCP/UDP1120" "BlizzardDownloader_TCP/UDP3724" "BlizzardDownloader_TCP/UDP4000" "BlizzardDownloader_TCP/UDP6112-6114"
+        set comment "Spezifische Ports fuer online Gaming"
+    next
+end
