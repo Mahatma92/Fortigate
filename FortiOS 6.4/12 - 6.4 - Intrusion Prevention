@@ -1,0 +1,13 @@
+config ips sensor
+    edit "idp_bube_client_v1.1"
+        set comment "Burkhalter IT default Client IDP Profil"
+        set block-malicious-url enable
+        set scan-botnet-connections block
+        config entries
+            edit 1
+                set location client 
+                set log-packet enable
+            next
+        end
+    next
+end
