@@ -1,0 +1,778 @@
+#Adressen Burkhalter AG
+#----------------------
+config firewall address
+    edit "wildcard.buhonet.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.buhonet.ch"
+    next
+    edit "webmail.burkhalter.ch"
+        set type fqdn
+        set color 6
+        set fqdn "webmail.burkhalter.ch"
+    next
+    edit "burkhalter.beekeeper.io"
+        set type fqdn
+        set color 6
+        set fqdn "burkhalter.beekeeper.io"
+    next
+    edit "wildcard.duosecurity.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.duosecurity.com"
+    next
+    edit "wildcard.hooc.me"
+        set type fqdn
+        set color 6
+        set fqdn "*.hooc.me"
+    next
+end
+
+
+#Gruppe für Burkhalter AG
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_BURKHALTER_1.2"
+        set member "wildcard.buhonet.ch" "webmail.burkhalter.ch" "burkhalter.beekeeper.io" "wildcard.duosecurity.com" "wildcard.hooc.me"
+        set color 6
+    next
+end
+
+#Adressen für Swisscom SmartBcon
+#-------------------------------
+config firewall address
+    edit "SwisscomSBconSIP/RDP_SUB_194.209.29.192/27"
+        set color 6
+        set subnet 194.209.29.192 255.255.255.224
+    next
+    edit "SwisscomSBconZHH_SUB_195.186.161.0/24"
+        set color 6
+        set subnet 195.186.161.0/24
+    next
+    edit "SwisscomSBconOLT_SUB_195.186.204.0/24"
+        set color 6
+        set subnet 195.186.204.0/24
+    next
+    edit "SwisscomSBconHDM&BDM1_SUB_195.186.155.0/24"
+        set color 6
+        set subnet 195.186.155.0/24
+    next
+    edit "SwisscomSBconHDM&BDM2_SUB_195.186.219.0/24"
+        set color 6
+        set subnet 195.186.219.0/24
+    next
+    edit "SwisscomSBconCDS_SUB_193.246.33.197/32"
+        set color 6
+        set subnet 193.246.33.197/32
+    next
+    edit "SwisscomDNS1_195.186.1.162/32"
+        set color 6
+        set subnet 195.186.1.162/32
+    next
+    edit "SwisscomDNS2_195.186.4.162/32"
+        set color 6
+        set subnet 195.186.4.162/32
+    next
+    edit "was1.join.swisscom.ch"
+        set type fqdn
+        set color 6
+        set fqdn was1.join.swisscom.ch
+    next
+    edit "was2.join.swisscom.ch"
+        set type fqdn
+        set color 6
+        set fqdn was2.join.swisscom.ch
+    next
+    edit "was3.join.swisscom.ch"
+        set type fqdn
+        set color 6
+        set fqdn was3.join.swisscom.ch
+    next
+end
+
+#Gruppe für Swisscom SmartBcon
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_SWISSCOM_SBCON_1.0"
+        set member "SwisscomSBconSIP/RDP_SUB_194.209.29.192/27" "SwisscomSBconZHH_SUB_195.186.161.0/24" "SwisscomSBconOLT_SUB_195.186.204.0/24" "SwisscomSBconHDM&BDM1_SUB_195.186.155.0/24" "SwisscomSBconHDM&BDM2_SUB_195.186.219.0/24" "SwisscomSBconCDS_SUB_193.246.33.197/32" "SwisscomDNS1_195.186.1.162/32" "SwisscomDNS2_195.186.4.162/32" "was1.join.swisscom.ch" "was2.join.swisscom.ch" "was3.join.swisscom.ch"
+        set color 6
+    next
+end
+
+
+#Adressen für Antivirus
+#------------------
+config firewall address
+    edit "wildcard.sophos.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.sophos.com"
+    next
+    edit "e13687.d.akamaiedge.net"
+        set type fqdn
+        set comment "Sophos"
+        set color 6
+        set fqdn "e13687.d.akamaiedge.net"
+    next
+    edit "wildcard.sophosxl.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.sophosxl.net"
+    next
+    edit "wildcard.sophosupd.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.sophosupd.com"
+    next
+    edit "wildcard.sophosupd.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.sophosupd.net"
+    next
+end
+
+#Gruppe für Antivirus
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_ANTIVIRUS_1.2"
+        set member "wildcard.sophos.com" "e13687.d.akamaiedge.net" "wildcard.sophosxl.net" "wildcard.sophosupd.com" "wildcard.sophosupd.net"
+        set color 6
+    next
+end
+
+
+#Adressen für wichtige MobileApps
+#------------------
+config firewall address
+    edit "wildcard.sbbmobile.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.sbbmobile.ch"
+    next
+end
+
+#Gruppe für wichtige MobileApps
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_MOBILEAPPS_1.0"
+        set member "wildcard.sbbmobile.ch"
+        set color 6
+    next
+end
+
+
+#Adressen für Ärzte
+#------------------
+config firewall address
+    edit "HIN_193.247.208.210/32"
+        set color 6
+        set subnet 193.247.208.210 255.255.255.255
+    next
+    edit "HIN_193.247.208.211/32"
+        set color 6
+        set subnet 193.247.208.211 255.255.255.255
+    next
+    edit "HIN_193.247.208.212/32"
+        set color 6
+        set subnet 193.247.208.212 255.255.255.255
+    next
+    edit "HIN_193.247.208.36/32"
+        set color 6
+        set subnet 193.247.208.36 255.255.255.255
+    next
+    edit "HIN_193.247.208.38/32"
+        set color 6
+        set subnet 193.247.208.38 255.255.255.255
+    next
+    edit "HIN_193.247.208.80/32"
+        set color 6
+        set subnet 193.247.208.80 255.255.255.255
+    next
+    edit "HIN_193.247.208.81/32"
+        set color 6
+        set subnet 193.247.208.81 255.255.255.255
+    next
+    edit "HIN_193.247.208.82/32"
+        set color 6
+        set subnet 193.247.208.82 255.255.255.255
+    next
+    edit "HIN_193.247.208.103/32"
+        set color 6
+        set subnet 193.247.208.103 255.255.255.255
+    next
+    edit "HIN_193.247.208.218/32"
+        set color 6
+        set subnet 193.247.208.218 255.255.255.255
+    next
+    edit "HIN_193.247.208.32/32"
+        set color 6
+        set subnet 193.247.208.32 255.255.255.255
+    next
+    edit "HIN_193.247.208.30/32"
+        set color 6
+        set subnet 193.247.208.30 255.255.255.255
+    next
+    edit "wildcard.delemed.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.delemed.ch"
+    next
+    edit "wildcard.hin.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.hin.ch"
+    next
+    edit "wildcard.team-w.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.team-w.ch"
+    next
+    edit "wildcard.argomed.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.argomed.ch"
+    next
+    edit "wildcard.zur-rose.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.zur-rose.ch"
+    next
+    edit "wildcard.clustertec.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.clustertec.ch"
+    next
+    edit "wildcard.labcube.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.labcube.ch"
+    next
+    edit "portal-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com"
+        set type fqdn
+        set color 6
+        set fqdn "portal-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com"
+    next
+    edit "push-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com"
+        set type fqdn
+        set color 6
+        set fqdn "push-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com"
+    next
+    edit "Labcube_qcheck.ch"
+        set type fqdn
+        set color 6
+        set fqdn "qcheck.ch"
+    next
+    edit "wildcard.medidata.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.medidata.ch"
+    next
+    edit "wildcard.medtransfer.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.medtransfer.ch"
+    next
+end
+
+#Gruppe für Ärzte
+#----------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_MEDICAL_1.9"
+        set member "HIN_193.247.208.210/32" "HIN_193.247.208.211/32" "HIN_193.247.208.212/32" "wildcard.delemed.ch" "HIN_193.247.208.103/32" "HIN_193.247.208.36/32" "HIN_193.247.208.38/32" "HIN_193.247.208.80/32" "HIN_193.247.208.81/32" "HIN_193.247.208.82/32" "HIN_193.247.208.218/32" "HIN_193.247.208.30/32" "HIN_193.247.208.32/32" "wildcard.hin.ch" "wildcard.team-w.ch" "wildcard.argomed.ch" "wildcard.zur-rose.ch" "wildcard.clustertec.ch" "wildcard.labcube.ch" "portal-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com" "push-labcubeportal.b9ad.pro-us-east-1.openshiftapps.com" "Labcube_qcheck.ch" "wildcard.medidata.ch" "wildcard.medtransfer.ch"
+        set color 6
+    next
+end
+
+
+#Adressen für DataTrust Backup
+#-----------------------------
+config firewall address
+    edit "wildcard.datatrust.ch"
+        set type fqdn
+        set color 6
+        set fqdn "*.datatrust.ch"
+    next
+end
+
+#Gruppe für DataTrust Backup
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_DATATRUST_1.1"
+        set member "wildcard.datatrust.ch"
+        set color 6
+    next
+end
+
+#Twint
+#-----------------------------
+config firewall address
+edit "service.twint.ch"
+        set type fqdn
+        set color 6
+        set fqdn "service.twint.ch"
+    next
+    edit "twint-prd.swisscom.ch"
+        set type fqdn
+        set color 6
+        set fqdn "twint-prd.swisscom.ch"
+    next
+end
+
+#Gruppe für Twint
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_TWINT_1.0"
+        set member "service.twint.ch" "twint-prd.swisscom.ch"
+        set color 6
+    next
+end
+
+#Fortinet
+#-----------------------------
+config firewall address
+    edit "Fortinet_173.243.138.0/24"
+        set color 6
+        set subnet 173.243.138.0 255.255.255.0
+    next
+    edit "Fortinet_96.45.33.0/24"
+        set color 6
+        set subnet 96.45.33.0 255.255.255.0
+    next
+    edit "Fortinet_66.35.17.0/24"
+        set color 6
+        set subnet 66.35.17.0 255.255.255.0
+    next
+    edit "Fortinet_208.91.114.0/24"
+        set color 6
+        set subnet 208.91.114.0 255.255.255.0
+    next
+end
+
+#Gruppe für Fortinet
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_FORTINET_1.0"
+        set member "Fortinet_173.243.138.0/24" "Fortinet_96.45.33.0/24" "Fortinet_66.35.17.0/24" "Fortinet_208.91.114.0/24"
+        set color 6
+    next
+end
+
+#Dropbox
+#-----------------------------
+config firewall address
+    edit "wildcard.dropbox.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.dropbox.com"
+    next
+    edit "wildcard.dropboxapi.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.dropboxapi.com"
+    next
+    edit "wildcard.dropboxusercontent.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.dropboxusercontent.com"
+    next
+end
+
+
+#Gruppe für Dropbox
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_DROPBOX_1.1"
+        set member "wildcard.dropbox.com" "wildcard.dropboxapi.com" "wildcard.dropboxusercontent.com"
+        set color 6
+    next
+end
+
+
+#Adressen für Alcatel Rainbow
+#-----------------------------
+config firewall address
+    edit "wildcard.openrainbow.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.openrainbow.com"
+    next
+end
+
+
+#Gruppe für Alcatel Rainbow
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_ALE_RAINBOW_1.1"
+        set member "wildcard.openrainbow.com"
+        set color 6
+    next
+end
+
+#Adressen für Mitel Cloudlink
+#-----------------------------
+config firewall address
+    edit "wildcard.mitel.io"
+        set type fqdn
+        set color 6
+        set fqdn "*.mitel.io"
+    next
+    edit "wildcard.ngrok.io"
+        set type fqdn
+        set color 6
+        set fqdn "*.ngrok.io"
+    next
+    edit "wildcard.ngrok.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.ngrok.com"
+    next
+end
+
+
+#Gruppe für Mitel Cloudlink
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_MITEL_CLOUDLINK_1.0"
+        set member "wildcard.mitel.io" "wildcard.ngrok.io" "wildcard.ngrok.com"
+        set color 6
+    next
+end
+
+
+
+
+#Apple
+#-----------------------------
+config firewall address
+edit "wildcard.apple.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.apple.com"
+    next
+    edit "wildcard.itunes-apple.com.akadns.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.itunes-apple.com.akadns.net"
+    next
+    edit "eu-irl-00001.s3.dualstack.eu-west-1.amazonaws.com"
+        set type fqdn
+        set comment "iCloud Backup"
+        set color 6
+        set fqdn "eu-irl-00001.s3.dualstack.eu-west-1.amazonaws.com"
+    next
+    edit "wildcard.icloud.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.icloud.com"
+    next
+    edit "wildcard.apple-dns.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.apple-dns.net"
+    next
+    edit "Apple_17.0.0.0/8"
+        set color 6
+        set subnet 17.0.0.0 255.0.0.0
+    next
+    edit "wildcard.origin-apple.com.akadns.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.origin-apple.com.akadns.net"
+    next
+    edit "wildcard.apple.com.akadns.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.apple.com.akadns.net"
+    next
+    edit "wildcard.apple.com.edgesuite.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.apple.com.edgesuite.net"
+    next
+end
+
+
+#Gruppe für Apple
+#-----------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_APPLE_1.1"
+        set member "wildcard.apple.com" "wildcard.itunes-apple.com.akadns.net" "eu-irl-00001.s3.dualstack.eu-west-1.amazonaws.com" "wildcard.icloud.com" "wildcard.apple-dns.net" "Apple_17.0.0.0/8" "wildcard.origin-apple.com.akadns.net" "wildcard.apple.com.akadns.net" "wildcard.apple.com.edgesuite.net"
+        set color 6
+    next
+end
+
+
+#Games
+#-----------------------------
+config firewall address
+    edit "wildcard.playstation.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.playstation.net"
+    next
+    edit "dmx.upc.ubisoft.com"
+        set type fqdn
+        set color 6
+        set fqdn "dmx.upc.ubisoft.com"
+    next
+    edit "ubistatic3-a.akamaihd.net"
+        set type fqdn
+        set color 6
+        set fqdn "ubistatic3-a.akamaihd.net"
+    next
+    edit "ubisoft-uplay-savegames.s3.amazonaws.com"
+        set type fqdn
+        set color 6
+        set fqdn "ubisoft-uplay-savegames.s3.amazonaws.com"
+    next
+    edit "wildcard.mariokarttour.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.mariokarttour.com"
+    next
+    edit "public-content-cdn-mariokarttour.akamaized.net"
+        set type fqdn
+        set color 6
+        set fqdn "public-content-cdn-mariokarttour.akamaized.net"
+    next
+    edit "download-cdn-mariokarttour.akamaized.net"
+        set type fqdn
+        set color 6
+        set fqdn "download-cdn-mariokarttour.akamaized.net"
+    next
+    edit "wildcard.nintendo.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.nintendo.com"
+    next
+end
+
+
+#Gruppe für Games
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_GAMES_1.1"
+        set member "wildcard.playstation.net" "dmx.upc.ubisoft.com" "ubistatic3-a.akamaihd.net" "ubisoft-uplay-savegames.s3.amazonaws.com" "wildcard.mariokarttour.com" "public-content-cdn-mariokarttour.akamaized.net" "download-cdn-mariokarttour.akamaized.net" "wildcard.nintendo.com"
+        set color 6
+    next
+end
+
+
+#Microsoft
+#-----------------------------
+config firewall address
+    edit "cdn.cloudappsecurity.com"
+        set type fqdn
+        set color 6
+        set fqdn "cdn.cloudappsecurity.com"
+    next
+    edit "config.teams.trafficmanager.net"
+        set type fqdn
+        set color 6
+        set fqdn "config.teams.trafficmanager.net"
+    next
+    edit "emea-prod-msgapi.trafficmanager.net"
+        set type fqdn
+        set color 6
+        set fqdn "emea-prod-msgapi.trafficmanager.net"
+    next
+    edit "wildcard.azure.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.azure.com"
+    next
+    edit "wildcard.microsoft.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.microsoft.com"
+    next
+    edit "wildcard.office.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.office.com"
+    next
+    edit "geo.clients.config.office.akadns.net"
+        set type fqdn
+        set color 6
+        set fqdn "geo.clients.config.office.akadns.net"
+    next
+    edit "mobile.events.data.trafficmanager.net"
+        set type fqdn
+        set color 6
+        set fqdn "mobile.events.data.trafficmanager.net"
+    next
+    edit "wildcard.azurewebsites.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.azurewebsites.net"
+    next
+    edit "wildcard.appcenter.ms"
+        set type fqdn
+        set color 6
+        set fqdn "*.appcenter.ms"
+    next
+    edit "wildcard.cloudapp.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.cloudapp.net"
+    next
+    edit "wildcard.msidentity.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.msidentity.com"
+    next
+    edit "wildcard.live.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.live.com"
+    next
+    edit "wildcard.azure-devices-provisioning.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.azure-devices-provisioning.net"
+    next
+    edit "wildcard.windows.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.windows.com"
+    next
+    edit "wildcard.trafficmanager.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.trafficmanager.net"
+    next
+    edit "wildcard.cloudfront.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.cloudfront.net"
+    next
+    edit "wildcard.microsoft.com.nsatc.net"
+        set type fqdn
+        set color 6
+        set fqdn "*.microsoft.com.nsatc.net"
+    next
+end
+
+
+#Gruppe für Microsoft
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_MICROSOFT_1.5"
+        set member "cdn.cloudappsecurity.com" "wildcard.cloudapp.net" "config.teams.trafficmanager.net" "emea-prod-msgapi.trafficmanager.net" "wildcard.azure.com" "wildcard.microsoft.com" "wildcard.office.com" "geo.clients.config.office.akadns.net" "mobile.events.data.trafficmanager.net" "wildcard.azurewebsites.net" "wildcard.appcenter.ms" "wildcard.msidentity.com" "wildcard.live.com" "wildcard.azure-devices-provisioning.net" "wildcard.windows.com" "wildcard.trafficmanager.net" "wildcard.cloudfront.net" "wildcard.microsoft.com.nsatc.net"
+        set color 6
+    next
+end
+
+
+#Atera
+#-----------------------------
+#https://support.atera.com/hc/de/articles/360015461139-Firewall-Einstellungen-f%C3%BCr-Ateras-Integrationen
+#Hinweis: Es sind nur die nötigsten URLS erfasst. Online Backup mit Acronis und die Antivirus Lösungen z.B. fehlen noch
+
+config firewall address
+    edit "pubsub.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "pubsub.atera.com"
+    next
+    edit "pubsub.pubnub.com"
+        set type fqdn
+        set color 6
+        set fqdn "pubsub.pubnub.com"
+    next
+    edit "agentreporting.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "agentreporting.atera.com"
+    next
+    edit "getalphacontrol.com"
+        set type fqdn
+        set color 6
+        set fqdn "getalphacontrol.com"
+    next
+    edit "app.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "app.atera.com"
+    next
+    edit "agenthb.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "agenthb.atera.com"
+    next
+    edit "packagesstore.blob.core.windows.net"
+        set type fqdn
+        set color 6
+        set fqdn "packagesstore.blob.core.windows.net"
+    next
+    edit "ps.pndsn.com"
+        set type fqdn
+        set color 6
+        set fqdn "ps.pndsn.com"
+    next
+    edit "agent-api.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "agent-api.atera.com"
+    next
+    edit "cacerts.thawte.com"
+        set type fqdn
+        set color 6
+        set fqdn "cacerts.thawte.com"
+    next
+    edit "agentreportingstore.blob.core.windows.net"
+        set type fqdn
+        set color 6
+        set fqdn "agentreportingstore.blob.core.windows.net"
+    next
+    edit "atera-agent-heartbeat.servicebus.windows.net"
+        set type fqdn
+        set color 6
+        set fqdn "atera-agent-heartbeat.servicebus.windows.net"
+    next
+    edit "ps.atera.com"
+        set type fqdn
+        set color 6
+        set fqdn "ps.atera.com"
+    next
+    edit "wildcard.api.splashtop.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.api.splashtop.com"
+    next
+    edit "wildcard.relay.splashtop.com"
+        set type fqdn
+        set color 6
+        set fqdn "*.relay.splashtop.com"
+    next
+    edit "sn.splashtop.com"
+        set type fqdn
+        set color 6
+        set fqdn "sn.splashtop.com"
+    next
+    edit "AteraBackup_31.186.246.0/24"
+        set type ipmask
+        set color 6
+        set subnet "31.186.246.0/24"
+    next
+    edit "AteraBackup_130.117.250.0/24"
+        set type ipmask
+        set color 6
+        set subnet "130.117.250.0/24"
+    next
+    edit "packages.chocolatey.org"
+        set type fqdn
+        set color 6
+        set fqdn "packages.chocolatey.org"
+    next
+end
+
+
+#Gruppe für Atera
+#---------------------------
+config firewall addrgrp
+    edit "G_ADR_BUBE_ATERA_1.0"
+        set member "pubsub.atera.com" "pubsub.pubnub.com" "agentreporting.atera.com" "getalphacontrol.com" "app.atera.com" "agenthb.atera.com" "packagesstore.blob.core.windows.net" "ps.pndsn.com" "agent-api.atera.com" "cacerts.thawte.com" "agentreportingstore.blob.core.windows.net" "atera-agent-heartbeat.servicebus.windows.net" "ps.atera.com" "wildcard.api.splashtop.com" "wildcard.relay.splashtop.com" "sn.splashtop.com" "AteraBackup_31.186.246.0/24" "AteraBackup_130.117.250.0/24" "packages.chocolatey.org"
+        set color 6
+    next
+end
