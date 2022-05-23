@@ -1,0 +1,35 @@
+# SIP Helper
+config system settings
+  set default-voip-alg-mode kernel-helper-based
+  set sip-expectation disable
+  set sip-nat-trace disable
+end
+
+
+# SIP Session-Helper
+config system session-helper
+	# show (suche nach SIP, meistens 13)
+	delete 13
+end
+
+
+# REBOOT
+# execute reboot
+
+
+# Deactivate the management of the flow RTP:
+
+config voip profile
+  edit default
+config sip
+end
+next
+edit strict
+config sip
+set status disable
+set rtp disable
+end
+next
+end
+
+# REBOOT
