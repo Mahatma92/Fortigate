@@ -1,0 +1,48 @@
+#Kommentar: Ausnahmen hinzugefügt: PPTP, L2TP, OpenVPN (Erlaubt) / BitTorrent (verboten) / set unknown-application-log enable / QUIC erlaubt
+
+config application list
+    edit "app_bube_v1.3_Allow_QUIC"
+        set comment "Application Control BUBE v1.3 - QUIC erlaubt"
+        set other-application-log enable
+        set unknown-application-log enable
+        set options allow-dns allow-quic
+        config entries
+            edit 1
+                set application 6
+            next
+            edit 2
+                set application 16435 16714 17244
+                set action pass
+                set log enable
+            next
+            edit 3
+                set category 6
+            next
+        end
+    next
+end
+
+
+#Kommentar: Ausnahmen hinzugefügt: PPTP, L2TP, OpenVPN (Erlaubt) / BitTorrent (verboten) / set unknown-application-log enable / QUIC Blockiert
+
+config application list
+    edit "app_bube_v1.3"
+        set comment "Application Control BUBE v1.3 - QUIC blockiert"
+        set other-application-log enable
+        set unknown-application-log enable
+        set options allow-dns
+        config entries
+            edit 1
+                set application 6
+            next
+            edit 2
+                set application 16435 16714 17244
+                set action pass
+                set log enable
+            next
+            edit 3
+                set category 6
+            next
+        end
+    next
+end
