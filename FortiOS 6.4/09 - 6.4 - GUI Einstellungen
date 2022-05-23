@@ -1,0 +1,29 @@
+config system global 
+    set gui-firmware-upgrade-warning disable
+end
+
+config system settings
+    set gui-dns-database enable
+    set gui-multicast-policy enable
+    set gui-dos-policy enable
+    set gui-local-in-policy enable
+    set gui-dynamic-routing enable
+    set gui-ips enable
+    set gui-wireless-controller disable
+    set gui-switch-controller disable
+    set gui-wan-load-balancing enable
+    set gui-advanced-policy enable
+    set gui-email-collection enable
+    set gui-multiple-interface-policy enable
+end
+
+#Admin Port 9443
+#---------------
+config system global
+    set admin-sport 9443
+    set admintimeout 20
+    set gui-theme mariner
+    set gui-certificates enable
+    set timezone 26
+    set virtual-switch-vlan disable
+end
