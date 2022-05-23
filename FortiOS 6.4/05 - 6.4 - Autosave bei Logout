@@ -1,0 +1,3 @@
+config system global
+    set revision-backup-on-logout enable
+end
