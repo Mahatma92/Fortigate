@@ -1,0 +1,53 @@
+#bei VDOM zuerst VDOM auswählen
+
+config vdom
+edit root			#oder gewünschte VDOM auswählen
+
+
+#Normal
+
+config firewall profile-protocol-options
+edit "prot_bube_v1.1"
+        set oversize-log enable
+        config http
+            set ports 80
+            unset options
+            unset post-lang
+            set oversize-limit 5
+            set uncompressed-oversize-limit 5
+        end
+        config ftp
+            set ports 21
+            set options splice
+            set oversize-limit 5
+        end
+        config imap
+            set ports 143
+            set options fragmail
+            set oversize-limit 5
+        end
+        config mapi
+            set ports 135
+            set options fragmail
+            set oversize-limit 5
+        end
+        config pop3
+            set ports 110
+            set options fragmail
+            set oversize-limit 5
+        end
+        config smtp
+            set ports 25
+            set options fragmail splice
+            set oversize-limit 5
+        end
+        config nntp
+            set ports 119
+            set options splice
+            set oversize-limit 5
+        end
+        config dns
+            set ports 53
+        end
+    next
+end
