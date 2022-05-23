@@ -1,0 +1,83 @@
+#Bei VDOM Konfiguration:
+config global
+
+#anschliessend gleiche Konfiguration
+
+#Für Normalkunden
+config log fortianalyzer setting
+  set status enable
+  set certificate-verification disable
+  set server 46.140.108.181
+  set upload-option realtime
+  set enc-algorithm high
+  set reliable enable
+end
+
+#Für Wartungsvertragskunden diese Adresse verwenden:
+config log fortianalyzer setting
+  set status enable
+  set certificate-verification disable
+  set server 213.200.206.229
+  set upload-option realtime
+  set enc-algorithm high
+  set reliable enable
+end
+
+config log fortianalyzer filter
+  set severity information
+end
+
+config log fortiguard setting
+  set status disable
+end
+
+## Bei jeder VDOM einzeln eintragen
+
+config log memory filter
+  set severity information
+  set local-traffic enable
+end
+
+config log setting
+  set resolve-ip enable 
+  set resolve-port enable 
+  set log-user-in-upper  disable 
+  set fwpolicy-implicit-log enable 
+  set fwpolicy6-implicit-log disable 
+  set log-invalid-packet enable
+  set local-in-allow enable 
+  set local-in-deny-unicast enable
+  set local-in-deny-broadcast enable
+  set local-out enable 
+  set daemon-log enable 
+  set neighbor-event disable 
+  set brief-traffic-format disable 
+  set user-anonymize disable 
+end
+
+config log memory setting 
+  set status disable
+end
+
+config log gui-display
+  set resolve-hosts enable 
+  set resolve-apps enable 
+  set fortiview-unscanned-apps enable
+end
+
+config log eventfilter
+  set event enable
+  set system enable
+  set vpn enable
+  set user enable
+  set router enable
+  set wireless-activity enable
+  set wan-opt enable
+  set endpoint enable
+  set ha enable
+  set security-rating enable
+  set fortiextender enable
+  set connector enable
+  set sdwan enable
+  set switch-controller enable
+end
