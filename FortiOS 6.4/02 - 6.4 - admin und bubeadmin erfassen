@@ -1,0 +1,47 @@
+config system admin
+    edit "bubeadmin"
+        set trusthost1 10.0.0.0 255.0.0.0
+        set trusthost2 172.16.0.0 255.240.0.0
+        set trusthost3 192.168.0.0 255.255.0.0
+        set trusthost4 195.65.26.32 255.255.255.224
+        set trusthost5 46.140.108.176 255.255.255.248
+        set trusthost6 213.200.206.224 255.255.255.248
+    next
+    edit "admin"
+        set trusthost1 10.0.0.0 255.0.0.0
+        set trusthost2 172.16.0.0 255.240.0.0
+        set trusthost3 192.168.0.0 255.255.0.0
+        set trusthost4 195.65.26.32 255.255.255.224
+        set trusthost5 46.140.108.176 255.255.255.248
+        set trusthost6 213.200.206.224 255.255.255.248
+    next
+end
+
+#
+#Bei neuen Fortigates (Passwort wird geändert!):
+#
+#Mit VDOM: vorgängig config global einfügen
+
+config system admin
+    edit "bubeadmin"
+        set trusthost1 10.0.0.0 255.0.0.0
+        set trusthost2 172.16.0.0 255.240.0.0
+        set trusthost3 192.168.0.0 255.255.0.0
+        set trusthost4 195.65.26.32 255.255.255.224
+        set trusthost5 46.140.108.176 255.255.255.248
+        set trusthost6 213.200.206.224 255.255.255.248
+        set accprofile "super_admin"
+        set comments "Burkhalter IT Administrator"
+        set vdom "root"
+        set password burkhalter
+    next
+    edit "admin"
+        set trusthost1 10.0.0.0 255.0.0.0
+        set trusthost2 172.16.0.0 255.240.0.0
+        set trusthost3 192.168.0.0 255.255.0.0
+        set trusthost4 195.65.26.32 255.255.255.224
+        set trusthost5 46.140.108.176 255.255.255.248
+        set trusthost6 213.200.206.224 255.255.255.248
+        set password burkhalter
+    next
+end
