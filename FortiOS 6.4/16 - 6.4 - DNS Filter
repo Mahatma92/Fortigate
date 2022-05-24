@@ -5,67 +5,67 @@
 
 config dnsfilter domain-filter
 edit 1
-set name "dns_bube_v1.0"
-config entries
+    set name "dns_bube_v1.0"
+    config entries
 edit 1
-set domain "*.apple.com"
-set type wildcard
-set action allow
+    set domain "*.apple.com"
+    set type wildcard
+    set action allow
 next
 edit 2
-set domain "*.itunes.apple.com"
-set type wildcard
-set action allow
+    set domain "*.itunes.apple.com"
+    set type wildcard
+    set action allow
 next
 edit 3
-set domain "*.phobos.apple.com"
-set type wildcard
-set action allow
+    set domain "*.phobos.apple.com"
+    set type wildcard
+    set action allow
 next
 edit 4
-set domain "*.apple.com.edgesuite.net"
-set type wildcard
-set action allow
+    set domain "*.apple.com.edgesuite.net"
+    set type wildcard
+    set action allow
 next
 edit 5
-set domain "*.windowsupdate.com"
-set type wildcard
-set action allow
+    set domain "*.windowsupdate.com"
+    set type wildcard
+    set action allow
 next
 edit 6
-set domain "*.download.windowsupdate.com"
-set type wildcard
-set action allow
+    set domain "*.download.windowsupdate.com"
+    set type wildcard
+    set action allow
 next
 edit 7
-set domain "*.stats.update.microsoft.com"
-set type wildcard
-set action allow
+    set domain "*.stats.update.microsoft.com"
+    set type wildcard
+    set action allow
 next
 edit 8
-set domain "*.msftncsi.com"
-set type wildcard
-set action allow
+    set domain "*.msftncsi.com"
+    set type wildcard
+    set action allow
 next
 edit 9
-set domain "*.microsoft.com"
-set type wildcard
-set action allow
+    set domain "*.microsoft.com"
+    set type wildcard
+    set action allow
 next
 edit 11
-set domain "*.hooc.me"
-set type wildcard
-set action allow
+    set domain "*.hooc.me"
+    set type wildcard
+    set action allow
 next
 edit 12
-set domain "*.office.com"
-set type wildcard
-set action allow
+    set domain "*.office.com"
+    set type wildcard
+    set action allow
 next
 edit 13
-set domain "*.microsoftonline.com"
-set type wildcard
-set action allow
+    set domain "*.microsoftonline.com"
+    set type wildcard
+    set action allow
 next
 end
 next
